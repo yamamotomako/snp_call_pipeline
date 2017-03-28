@@ -19,5 +19,10 @@ Learning purpose of snip-calling program
 
 8. anotation
 
-These programs are for analyzing the differences between human genomes.
-This pipeline is aimed to build by one procedure, that is reprodusable for anyone, anytime.
+
+This is the sample program of detection of snip-genome sequence (SNP calling), and also educational purpose for learning building one of genome piplines.
+This is really the first commition of my work about genome analyzing.
+So please do not make any claims about this repositories. (--;
+
+<br> 
+SNP (snip) means the differences between human genomes, it's originally installed in humans. Snips are interestingly very useful to detect the personal differences, such as strongness for alchols, colors of eyes, etc. On the other hand, however, snips can find seeds of cancers, regardless of the amounts are tiny or not. They give the position and 
