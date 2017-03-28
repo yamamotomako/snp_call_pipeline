@@ -18,4 +18,6 @@ Learning purpose of snip-calling program
 7. file converting for anotation
 
 8. anotation
-These programs are for analyzing the difference genome between humans.
+
+These programs are for analyzing the differences between human genomes.
+This pipeline is aimed to build by one procedure, that is reprodusable for anyone, anytime.
