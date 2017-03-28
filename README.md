@@ -1,5 +1,5 @@
 # snp_call_pipeline
-Learning purpose of snip-calling program
+Learning purpose of snip-calling pipeline.
 
 1. prepare fastq file
 
@@ -19,7 +19,7 @@ Learning purpose of snip-calling program
 
 8. anotation
 
-
+-----------------------
 This is the sample program of detection of snip-genome sequence (SNP calling), and also educational purpose for learning building one of genome piplines.
 This is really the first commition of my work about genome analyzing.
 So please do not make any claims about this repositories. (--;
