@@ -1,7 +1,7 @@
 # snp_call_pipeline
 Learning purpose of snip-calling pipeline.
-
-1. prepare fastq file
+0. make index file from reference fastq
+1. prepare target fastq file
 
 2. split fastq file
 
