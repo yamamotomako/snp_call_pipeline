@@ -2,12 +2,15 @@
 
 #$ -S /bin/bash
 #$ -cwd
+#$ -o ./log -e ./log
+
+cur_dir=`pwd`
+outdir=`sed -n 4P $cur_dir/tmp_path`
+
+str=`ls -d $outdir/tmp/split_sort/* | tr "\n" " "`
 
 
-str=`ls -d ../data/out/split_sort/* | tr "\n" " "`
+samtools merge -f $outdir/r.all.bam $str
 
-
-../bin/samtools merge ../results/r.all.bam $str
-
-../bin/samtools index ../results/r.all.bam
+samtools index -f $outdir/r.all.bam
 

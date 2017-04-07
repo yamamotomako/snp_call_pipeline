@@ -2,6 +2,15 @@
 
 #$ -S /bin/bash
 #$ -cwd
+#$ -o ./log -e ./log
+
+cur_dir=`pwd`
+outdir=`sed -n 4P $cur_dir/tmp_path`
+
+mkdir -p $outdir/tmp/split_sam
+mkdir -p $outdir/tmp/split_bam
+
+mkdir -p $outdir/tmp/split_sort
 
 
 num=$SGE_TASK_ID
@@ -16,15 +25,10 @@ elif [ $num -lt 100 ]; then
 fi
 
 
-mkdir -p ../data/out/split_sam
-mkdir -p ../data/out/split_bam
-mkdir -p ../data/out/split_sort
+bwa mem $cur_dir/data/human_index $outdir/tmp/split/r1.fq.$num $outdir/tmp/split/r2.fq.$num > $outdir/tmp/split_sam/r.sam.$num
 
+samtools view -S -b -h $outdir/tmp/split_sam/r.sam.$num > $outdir/tmp/split_bam/r.bam.$num
 
-../bin/bwa mem human_index ../data/out/split/r1.fq.$num ../data/out/split/r2.fq.$num > ../data/out/split_sam/r.sam.$num
-
-../bin/samtools view -S -b -h ../data/out/split_sam/r.sam.$num > ../data/out/split_bam/r.bam.$num
-
-../bin/samtools sort ../data/out/split_bam/r.bam.$num ../data/out/split_sort/r.sort.$num
+samtools sort $outdir/tmp/split_bam/r.bam.$num $outdir/tmp/split_sort/r.sort.$num
 
 
